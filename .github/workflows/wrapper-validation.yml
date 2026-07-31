@@ -1,0 +1,22 @@
+# Verifies that the checked-in gradle-wrapper.jar matches Gradle's official
+# published checksums. This is the recommended mitigation for the OpenSSF
+# Scorecard "Binary-Artifacts" finding on the wrapper JAR.
+#
+# Docs: https://github.com/gradle/wrapper-validation-action
+name: Wrapper validation
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate Gradle wrapper JAR
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: gradle/wrapper-validation-action@ebf3e6cb8f1ba19fc037a72116fe64f24046d72c # v3
