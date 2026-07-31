@@ -1,5 +1,7 @@
 # My Financial Book - Android App
 
+[![SLSA 3](https://slsa.dev/images/gh-badge-level3.svg)](https://slsa.dev)
+
 **My Financial Book** is a comprehensive, multi-language business management and accounting application built with **Jetpack Compose**. It empowers small to medium-sized businesses to manage their finances, inventory, staff, and invoices all in one place, with seamless cloud synchronization and robust security features.
 
 ---
@@ -136,7 +138,8 @@ This project is hardened against software supply-chain attacks.
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
-This project is for educational/portfolio purposes. Please contact the author for licensing queries.
+
+This project is licensed under the [MIT License](LICENSE). Copyright © 2026 Mohammad Liaquat Ali.
 
 ---
 
