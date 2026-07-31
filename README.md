@@ -137,3 +137,12 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 This project is for educational/portfolio purposes. Please contact the author for licensing queries.
+
+---
+
+## ✍️ Author
+
+Made with ❤️ by **Malik** ([@malik-cat](https://github.com/malik-cat))
+
+[![GitHub](https://img.shields.io/badge/GitHub-malik--cat-181717?logo=github&logoColor=white)](https://github.com/malik-cat)
+
