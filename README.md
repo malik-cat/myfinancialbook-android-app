@@ -140,9 +140,9 @@ This project is for educational/portfolio purposes. Please contact the author fo
 
 ---
 
-## ✍️ Author
+## 👤 Author
 
-Made with ❤️ by **Malik** ([@malik-cat](https://github.com/malik-cat))
+**Mohammad Liaquat Ali** — developer and maintainer of My Financial Book.
 
-[![GitHub](https://img.shields.io/badge/GitHub-malik--cat-181717?logo=github&logoColor=white)](https://github.com/malik-cat)
+[GitHub](https://github.com/malik-cat) · [Project Repository](https://github.com/malik-cat/myfinancialbook-android-app)
 
