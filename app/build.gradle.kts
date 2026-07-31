@@ -85,5 +85,5 @@ dependencies {
     implementation("androidx.camera:camera-view:1.3.3")
 
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.ext:junit:1.3.0")
 }
