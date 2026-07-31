@@ -1,0 +1,34 @@
+# Dependabot: automated, low-risk dependency updates so known
+# vulnerabilities are patched early.
+#
+# Docs: https://docs.github.com/code-security/dependabot
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    groups:
+      compose:
+        patterns:
+          - "androidx.compose*"
+      firebase:
+        patterns:
+          - "com.google.firebase*"
+    labels:
+      - "dependencies"
+      - "security"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "security"

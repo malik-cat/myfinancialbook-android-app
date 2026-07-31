@@ -1,0 +1,24 @@
+# Dependency Review: blocks pull requests that introduce known-vulnerable
+# or non-compliant dependencies before they are merged.
+#
+# Docs: https://github.com/actions/dependency-review-action
+name: Dependency Review
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write # Required to comment the dependency review summary.
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Dependency review
+        uses: actions/dependency-review-action@v4

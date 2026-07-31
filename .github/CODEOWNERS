@@ -1,0 +1,9 @@
+# Default code owners. Every change requires review/approval from an owner
+# when branch protection is enabled.
+* @malik-cat
+
+# Security-sensitive files require explicit review by the maintainer.
+/.github/workflows/ @malik-cat
+SECURITY.md @malik-cat
+app/build.gradle.kts @malik-cat
+build.gradle.kts @malik-cat

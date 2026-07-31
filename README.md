@@ -100,6 +100,32 @@ myfinancialbook/
 
 ---
 
+## 🔒 Supply-Chain Security (SLSA)
+
+This project is hardened against software supply-chain attacks.
+
+- **SLSA Build Level 3 provenance** — Every tagged release (`v*`) is built on
+  GitHub-hosted runners and signed by the
+  [SLSA GitHub Generator](https://github.com/slsa-framework/slsa-github-generator).
+  The resulting `provenance.intoto.jsonl` attestation is attached to the
+  GitHub release and can be verified with
+  [`slsa-verifier`](https://github.com/slsa-framework/slsa-verifier).
+- **Dependency hygiene** — [Dependabot](.github/dependabot.yml) keeps
+  dependencies current, and
+  [Dependency Review](.github/workflows/dependency-review.yml) blocks PRs
+  that add known-vulnerable dependencies.
+- **Continuous posture checks** — The [Scorecard](.github/workflows/scorecard.yml)
+  workflow evaluates repository security and uploads results to the
+  Security > Code scanning tab.
+- **Reporting** — See [SECURITY.md](SECURITY.md) for the vulnerability
+  reporting process and recommended branch protection rules.
+
+> **CI build note:** the Gradle build requires `google-services.json`.
+> In the SLSA workflow this is injected from the `GOOGLE_SERVICES_JSON`
+> repository secret — see [SECURITY.md](SECURITY.md).
+
+---
+
 ## 📸 Screenshots
 *(Coming Soon)*
 > You can find visual assets in the `app/src/main/res/drawable` folder, including the app icon and feature graphics.
