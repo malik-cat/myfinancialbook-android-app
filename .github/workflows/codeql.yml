@@ -26,15 +26,45 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # build-mode: none analyzes the source without compiling.
-      # The Android project cannot be autobuilt on GitHub-hosted runners:
-      # 1) the repo ships only gradlew.bat (no POSIX `gradlew` script),
-      # 2) google-services.json (Firebase) is intentionally gitignored.
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
           languages: java-kotlin
-          build-mode: none
+          build-mode: manual
+
+      # The Firebase google-services plugin requires google-services.json at
+      # configuration time. The real file is intentionally gitignored, so a
+      # minimal placeholder is generated here just so the build can run.
+      # Static analysis does not depend on real Firebase values.
+      - name: Generate placeholder google-services.json
+        run: |
+          cat > app/google-services.json <<'EOF'
+          {
+            "project_info": {
+              "project_number": "000000000000",
+              "project_id": "placeholder"
+            },
+            "client": [
+              {
+                "client_info": {
+                  "mobilesdk_app_id": "1:000000000000:android:0000000000000000000000",
+                  "android_client_info": { "package_name": "com.myfinancialbook.app" }
+                },
+                "api_key": [ { "current_key": "AIzaSyPlaceholderPlaceholderPlaceholder" } ]
+              }
+            ],
+            "configuration_version": "1"
+          }
+          EOF
+
+      - name: Build with Gradle
+        run: ./gradlew assembleDebug --no-daemon
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
